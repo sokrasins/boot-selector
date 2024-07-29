@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "board.h": "c",
+        "tusb.h": "c",
+        "stdlib.h": "c",
+        "boot_switch.h": "c",
+        "console.h": "c",
+        "usbd.h": "c",
+        "reboot.h": "c",
+        "pico.h": "c"
+    }
+}
