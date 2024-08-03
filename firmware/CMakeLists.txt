@@ -34,6 +34,7 @@ target_sources(${PROJECT} PUBLIC
         ${CMAKE_CURRENT_LIST_DIR}/src/tud_dev_cb.c
         ${CMAKE_CURRENT_LIST_DIR}/src/console.c
         ${CMAKE_CURRENT_LIST_DIR}/src/boot_switch.c
+        ${CMAKE_CURRENT_LIST_DIR}/src/at42qt1070.c
         )
 
 target_include_directories(${PROJECT} PUBLIC

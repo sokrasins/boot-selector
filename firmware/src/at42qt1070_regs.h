@@ -1,0 +1,71 @@
+#ifndef AT42QT1070_REGS_H_
+#define AT42QT1070_REGS_H_
+
+// AT42QT1070 I2C register definitions
+
+#define AT42QT_CHIP_ID          0U
+#define AT42QT_FIRMWARE_VERSION 1U
+#define AT42QT_DET_STATUS       2U
+#define AT42QT_KEY_STATUS       3U
+
+#define AT42QT_KEY_0_SIG_MSB    4U
+#define AT42QT_KEY_0_SIG_LSB    5U
+#define AT42QT_KEY_1_SIG_MSB    6U
+#define AT42QT_KEY_1_SIG_LSB    7U
+#define AT42QT_KEY_2_SIG_MSB    8U
+#define AT42QT_KEY_2_SIG_LSB    9U
+#define AT42QT_KEY_3_SIG_MSB    10U
+#define AT42QT_KEY_3_SIG_LSB    11U
+#define AT42QT_KEY_4_SIG_MSB    12U
+#define AT42QT_KEY_4_SIG_LSB    13U
+#define AT42QT_KEY_5_SIG_MSB    14U
+#define AT42QT_KEY_5_SIG_LSB    15U
+#define AT42QT_KEY_6_SIG_MSB    16U
+#define AT42QT_KEY_6_SIG_LSB    17U
+
+#define AT42QT_REF_DATA_0_MSB   18U
+#define AT42QT_REF_DATA_0_LSB   19U
+#define AT42QT_REF_DATA_1_MSB   20U
+#define AT42QT_REF_DATA_1_LSB   21U
+#define AT42QT_REF_DATA_2_MSB   22U
+#define AT42QT_REF_DATA_2_LSB   23U
+#define AT42QT_REF_DATA_3_MSB   24U
+#define AT42QT_REF_DATA_3_LSB   25U
+#define AT42QT_REF_DATA_4_MSB   26U
+#define AT42QT_REF_DATA_4_LSB   27U
+#define AT42QT_REF_DATA_5_MSB   28U
+#define AT42QT_REF_DATA_5_LSB   29U
+#define AT42QT_REF_DATA_6_MSB   30U
+#define AT42QT_REF_DATA_6_LSB   31U
+
+#define AT42QT_NTHR_KEY_0       32U
+#define AT42QT_NTHR_KEY_1       33U
+#define AT42QT_NTHR_KEY_2       34U
+#define AT42QT_NTHR_KEY_3       35U
+#define AT42QT_NTHR_KEY_4       36U
+#define AT42QT_NTHR_KEY_5       37U
+#define AT42QT_NTHR_KEY_6       38U
+
+#define AT42QT_AVE_AKS_KEY_0    39U
+#define AT42QT_AVE_AKS_KEY_1    40U
+#define AT42QT_AVE_AKS_KEY_2    41U
+#define AT42QT_AVE_AKS_KEY_3    42U
+#define AT42QT_AVE_AKS_KEY_4    43U
+#define AT42QT_AVE_AKS_KEY_5    44U
+#define AT42QT_AVE_AKS_KEY_6    45U
+
+#define AT42QT_DI_KEY_0         46U
+#define AT42QT_DI_KEY_1         47U
+#define AT42QT_DI_KEY_2         48U
+#define AT42QT_DI_KEY_3         49U
+#define AT42QT_DI_KEY_4         50U
+#define AT42QT_DI_KEY_5         51U
+#define AT42QT_DI_KEY_6         52U
+
+#define AT42QT_FO_MO_GUARD      53U
+#define AT42QT_LP_MODE          54U
+#define AT42QT_MAX_ON_DUR       55U
+#define AT42QT_CALIBRATE        56U
+#define AT42QT_RESET            57U
+
+#endif /*AT42QT1070_REGS_H_*/
