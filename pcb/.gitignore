@@ -1,4 +1,7 @@
 **.lck
 **backup*
+*.bak
 *auto_saved_files*
 fp-info-cache
+fp-lib-table
+sym-lib-table
