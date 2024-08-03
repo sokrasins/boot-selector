@@ -2166,6 +2166,28 @@
 		)
 		(uuid "f98a803f-daa9-45b1-851d-2702ed519c5b")
 	)
+	(rectangle
+		(start 104.14 62.23)
+		(end 137.16 93.98)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 5fb0c274-3211-4501-bb09-851850142f9b)
+	)
+	(text "TODO: See if I can remove these \nand configure pull-ups on rpi"
+		(exclude_from_sim no)
+		(at 121.158 65.024 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "03f3e568-0a34-48d3-9b3d-78ed155250bd")
+	)
 	(label "KEY1"
 		(at 191.77 102.87 0)
 		(fields_autoplaced yes)

@@ -2358,27 +2358,27 @@
 				)
 			)
 		)
-		(symbol "Memory_Flash:W25Q128JVS"
+		(symbol "Memory_Flash:W25Q32JVZP"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "U"
-				(at -8.89 8.89 0)
+				(at -6.35 11.43 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "W25Q128JVS"
-				(at 7.62 8.89 0)
+			(property "Value" "W25Q32JVZP"
+				(at 7.62 11.43 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" "Package_SO:SOIC-8_5.23x5.23mm_P1.27mm"
+			(property "Footprint" "Package_SON:WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4.3mm"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2387,7 +2387,16 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "http://www.winbond.com/resource-files/w25q128jv_dtr%20revc%2003272018%20plus.pdf"
+			(property "Datasheet" "http://www.winbond.com/resource-files/w25q32jv%20revg%2003272018%20plus.pdf"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "32Mb Serial Flash Memory, Standard/Dual/Quad SPI, DFN-8"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2396,7 +2405,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "128Mb Serial Flash Memory, Standard/Dual/Quad SPI, SOIC-8"
+			(property "ki_keywords" "flash memory SPI"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2405,7 +2414,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "flash memory SPI QPI DTR"
+			(property "ki_fp_filters" "WSON*1EP*6x5mm*P1.27mm*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2414,16 +2423,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "SOIC*5.23x5.23mm*P1.27mm*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "W25Q128JVS_0_1"
+			(symbol "W25Q32JVZP_0_1"
 				(rectangle
 					(start -7.62 10.16)
 					(end 7.62 -10.16)
@@ -2436,7 +2436,7 @@
 					)
 				)
 			)
-			(symbol "W25Q128JVS_1_1"
+			(symbol "W25Q32JVZP_1_1"
 				(pin input line
 					(at -10.16 7.62 0)
 					(length 2.54)
@@ -2574,6 +2574,24 @@
 						)
 					)
 					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -12.7 90)
+					(length 2.54)
+					(name "EP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3340,6 +3358,12 @@
 		(uuid "2cdfecaa-0e73-4bf3-98c2-1b3cbf53cd70")
 	)
 	(junction
+		(at 52.07 187.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "30e960fd-1aad-4108-8fa3-bde9912776df")
+	)
+	(junction
 		(at 165.1 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3869,7 +3893,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 107.95) (xy 173.99 107.95)
+			(xy 163.83 97.79) (xy 173.99 97.79)
 		)
 		(stroke
 			(width 0)
@@ -4199,7 +4223,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 186.69) (xy 52.07 189.23)
+			(xy 52.07 186.69) (xy 52.07 187.96)
 		)
 		(stroke
 			(width 0)
@@ -4256,6 +4280,16 @@
 			(type default)
 		)
 		(uuid "8bc74b04-e4da-459c-a6dc-366c794db195")
+	)
+	(wire
+		(pts
+			(xy 54.61 187.96) (xy 52.07 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8c26e791-0a4a-4d48-ab21-666260c66601")
 	)
 	(wire
 		(pts
@@ -4439,6 +4473,16 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 186.69) (xy 54.61 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a7613508-5493-44f8-ac39-a9c7be0dae24")
+	)
+	(wire
+		(pts
 			(xy 52.07 152.4) (xy 52.07 154.94)
 		)
 		(stroke
@@ -4449,7 +4493,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 110.49) (xy 173.99 110.49)
+			(xy 163.83 102.87) (xy 173.99 102.87)
 		)
 		(stroke
 			(width 0)
@@ -4459,7 +4503,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 113.03) (xy 173.99 113.03)
+			(xy 163.83 100.33) (xy 173.99 100.33)
 		)
 		(stroke
 			(width 0)
@@ -4476,6 +4520,16 @@
 			(type default)
 		)
 		(uuid "aa88aea5-2efc-4705-949f-803919f801b7")
+	)
+	(wire
+		(pts
+			(xy 52.07 187.96) (xy 52.07 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa97e3dd-0ba6-41eb-9c7e-7c1003ef21e7")
 	)
 	(wire
 		(pts
@@ -4997,6 +5051,30 @@
 		)
 		(uuid "fece54e3-c4f9-42ac-80f2-6b7fd54d7617")
 	)
+	(rectangle
+		(start 49.53 179.07)
+		(end 72.39 195.58)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 3b2bc6f2-4c5d-4f26-80f7-c514ec011974)
+	)
+	(rectangle
+		(start 138.43 15.24)
+		(end 269.24 44.45)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 9fbe6a7e-65d9-4365-87a0-90e311400192)
+	)
 	(text "BOOTSEL button forces entry to bootloader\nby breaking SPI flash communication at boot"
 		(exclude_from_sim no)
 		(at 166.116 20.32 0)
@@ -5006,6 +5084,36 @@
 			)
 		)
 		(uuid "223855fe-7797-4877-8795-cf7946ecc1d1")
+	)
+	(text "TODO: Verify GND \nconnection"
+		(exclude_from_sim no)
+		(at 62.992 191.77 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "2ecf80be-bae4-42f4-9fb2-3d58b30bd8bc")
+	)
+	(text "Place near pin 44"
+		(exclude_from_sim no)
+		(at 166.37 81.788 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "6a6ddc22-e42e-427d-81b9-b22f47c7f258")
+	)
+	(text "Place near \npin 45"
+		(exclude_from_sim no)
+		(at 120.65 81.534 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "8e5d846f-9d22-4f66-aeb4-85c57d6b1852")
 	)
 	(text "Reset mechanism via button"
 		(exclude_from_sim no)
@@ -5028,6 +5136,16 @@
 			)
 		)
 		(uuid "d5626fdc-c42d-46d9-8f66-0957266a3609")
+	)
+	(text "TODO: Maybe change from \nbuttons to pins?"
+		(exclude_from_sim no)
+		(at 206.248 27.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "f5f527df-aa78-414c-9a96-624c5a5537fa")
 	)
 	(label "B2_LIGHT"
 		(at 165.1 146.05 0)
@@ -5140,7 +5258,7 @@
 		(uuid "3bc1de0e-13bd-4bc8-9b05-01865ba5681e")
 	)
 	(label "CAP_CHG"
-		(at 165.1 113.03 0)
+		(at 165.1 100.33 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5250,7 +5368,7 @@
 		(uuid "852e951d-c720-420f-8e6d-9a6bb9088de0")
 	)
 	(label "CAP_RES"
-		(at 165.1 110.49 0)
+		(at 165.1 102.87 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5360,7 +5478,7 @@
 		(uuid "d086312e-a379-4631-ae6b-8f41ce085401")
 	)
 	(label "SCL"
-		(at 170.18 107.95 0)
+		(at 170.18 97.79 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6362,94 +6480,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Memory_Flash:W25Q128JVS")
-		(at 52.07 173.99 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3a30ed01-755d-4348-8786-aaaef76452da")
-		(property "Reference" "U3"
-			(at 60.96 172.7199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "W25Q128JVS"
-			(at 60.96 175.2599 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_SO:SOIC-8_5.23x5.23mm_P1.27mm"
-			(at 52.07 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.winbond.com/resource-files/w25q128jv_dtr%20revc%2003272018%20plus.pdf"
-			(at 52.07 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "128Mb Serial Flash Memory, Standard/Dual/Quad SPI, SOIC-8"
-			(at 52.07 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "5"
-			(uuid "e7aac38b-3205-4fb9-ab53-76dc025c548a")
-		)
-		(pin "7"
-			(uuid "eb1aaee9-b8ca-44ee-8bbd-10809faeddd6")
-		)
-		(pin "6"
-			(uuid "611c693f-501e-4ff5-a3b7-39e6305e6184")
-		)
-		(pin "8"
-			(uuid "c1a551c1-b7d3-4eb4-bac8-35aa8a86462b")
-		)
-		(pin "2"
-			(uuid "42b3b8c0-0ae0-4429-a842-59875bc0384d")
-		)
-		(pin "1"
-			(uuid "e0e15157-2963-4a9d-8c5f-53fc14497815")
-		)
-		(pin "4"
-			(uuid "537acc9f-ac9f-434b-b6b9-0aabe4556eea")
-		)
-		(pin "3"
-			(uuid "20dbbb0b-f9d1-402b-817b-01157f40cd3e")
-		)
-		(instances
-			(project "boot_main"
-				(path "/ed98915d-12a7-4f29-9c7c-423444196a5a"
-					(reference "U3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 106.68 77.47 0)
 		(unit 1)
@@ -7120,6 +7150,97 @@
 			(project "boot_main"
 				(path "/ed98915d-12a7-4f29-9c7c-423444196a5a"
 					(reference "#PWR010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Memory_Flash:W25Q32JVZP")
+		(at 52.07 173.99 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6df66abb-ea39-4083-8521-9882733ccdb9")
+		(property "Reference" "U3"
+			(at 60.96 172.7199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "W25Q32JVZP"
+			(at 60.96 175.2599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SON:WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4.3mm"
+			(at 52.07 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.winbond.com/resource-files/w25q32jv%20revg%2003272018%20plus.pdf"
+			(at 52.07 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "32Mb Serial Flash Memory, Standard/Dual/Quad SPI, DFN-8"
+			(at 52.07 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "8"
+			(uuid "a0410d8b-bc6c-4947-896d-00b70910e30b")
+		)
+		(pin "4"
+			(uuid "c8619c2f-4f82-4f4a-b27b-67bd00477f7f")
+		)
+		(pin "2"
+			(uuid "c5950a83-7062-467b-a5a3-d881974e8f28")
+		)
+		(pin "3"
+			(uuid "5a8acdce-56aa-4cf1-8da1-1ed56495a748")
+		)
+		(pin "1"
+			(uuid "d069a24d-96b2-46ce-9f7f-ffb8f6ae22b2")
+		)
+		(pin "9"
+			(uuid "0e45d1cf-dc60-4404-859c-190347050d38")
+		)
+		(pin "7"
+			(uuid "5450920c-9e3d-4ad7-91da-034951013f63")
+		)
+		(pin "6"
+			(uuid "d0fd9ca9-efe4-4d5b-b0bd-8aefd236f63f")
+		)
+		(pin "5"
+			(uuid "0b0c391c-a48a-416e-a1e0-baa167df1bd0")
+		)
+		(instances
+			(project ""
+				(path "/ed98915d-12a7-4f29-9c7c-423444196a5a"
+					(reference "U3")
 					(unit 1)
 				)
 			)
