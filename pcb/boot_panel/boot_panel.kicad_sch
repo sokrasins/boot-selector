@@ -999,7 +999,7 @@
 	)
 	(symbol
 		(lib_id "cap_pads:capacitive_pad")
-		(at 175.26 81.28 0)
+		(at 175.26 73.66 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1007,7 +1007,7 @@
 		(dnp no)
 		(uuid "31358ecd-e6d0-4f2a-8d9c-98da8bab0f5b")
 		(property "Reference" "U2"
-			(at 171.704 85.09 90)
+			(at 171.704 77.47 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1015,7 +1015,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 175.26 81.28 0)
+			(at 175.26 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1023,7 +1023,7 @@
 			)
 		)
 		(property "Footprint" "cap_pads:square_20x20mm"
-			(at 175.26 81.28 0)
+			(at 175.26 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1032,7 +1032,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 175.26 81.28 0)
+			(at 175.26 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1041,7 +1041,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 175.26 81.28 0)
+			(at 175.26 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1089,7 +1089,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical_SMD_Pin1Left"
+		(property "Footprint" "Connector_FFC-FPC:Hirose_FH12-10S-0.5SH_1x10-1MP_P0.50mm_Horizontal"
 			(at 194.31 82.55 0)
 			(effects
 				(font
@@ -1223,7 +1223,7 @@
 	)
 	(symbol
 		(lib_id "cap_pads:capacitive_pad")
-		(at 175.26 88.9 0)
+		(at 175.26 81.28 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1231,6 +1231,70 @@
 		(dnp no)
 		(uuid "69ef1392-beff-4899-8a6b-f3d090584e3c")
 		(property "Reference" "U3"
+			(at 171.704 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 175.26 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "cap_pads:square_20x20mm"
+			(at 175.26 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 175.26 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 175.26 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6a4b60ad-9eff-4dfb-ab52-bccd08a877d4")
+		)
+		(instances
+			(project "boot_panel"
+				(path "/8ab3c608-f7f1-453e-bbc5-79001609d06b"
+					(reference "U3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "cap_pads:capacitive_pad")
+		(at 175.26 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "97169c99-74f2-45c5-a8de-e5d3ac2eefa8")
+		(property "Reference" "U1"
 			(at 171.704 92.71 90)
 			(effects
 				(font
@@ -1266,70 +1330,6 @@
 		)
 		(property "Description" ""
 			(at 175.26 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6a4b60ad-9eff-4dfb-ab52-bccd08a877d4")
-		)
-		(instances
-			(project "boot_panel"
-				(path "/8ab3c608-f7f1-453e-bbc5-79001609d06b"
-					(reference "U3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "cap_pads:capacitive_pad")
-		(at 175.26 73.66 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "97169c99-74f2-45c5-a8de-e5d3ac2eefa8")
-		(property "Reference" "U1"
-			(at 171.704 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "~"
-			(at 175.26 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "cap_pads:square_20x20mm"
-			(at 175.26 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 175.26 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 175.26 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
