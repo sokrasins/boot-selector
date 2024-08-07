@@ -3872,12 +3872,6 @@
 		(uuid "a9fc3744-47c0-46d8-9aa7-fb0ac4be323c")
 	)
 	(junction
-		(at 228.6 33.02)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "baf7a11b-a413-437c-af78-28874544eb37")
-	)
-	(junction
 		(at 41.91 102.87)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3936,6 +3930,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f7fe5956-597c-44ff-ad34-6d0e7ebbed1a")
+	)
+	(junction
+		(at 236.22 33.02)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f94b2a9f-3e18-46bc-983d-d2554b56e44b")
 	)
 	(wire
 		(pts
@@ -4099,16 +4099,6 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 33.02) (xy 248.92 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1dff7ee4-fa48-4577-a22f-25ab939eeab4")
-	)
-	(wire
-		(pts
 			(xy 143.51 81.28) (xy 143.51 87.63)
 		)
 		(stroke
@@ -4116,16 +4106,6 @@
 			(type default)
 		)
 		(uuid "1efbc534-df0b-4f8e-bab1-3ced62adbb7d")
-	)
-	(wire
-		(pts
-			(xy 228.6 24.13) (xy 228.6 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "23528c65-98a6-4875-8948-552ab48ef2ef")
 	)
 	(wire
 		(pts
@@ -4399,6 +4379,16 @@
 	)
 	(wire
 		(pts
+			(xy 236.22 31.75) (xy 236.22 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5cebdc96-2dd3-4b4b-a24a-c96721c8940a")
+	)
+	(wire
+		(pts
 			(xy 140.97 81.28) (xy 143.51 81.28)
 		)
 		(stroke
@@ -4496,16 +4486,6 @@
 			(type default)
 		)
 		(uuid "6b5db036-a06c-46f7-a5fe-81f57e3c6a85")
-	)
-	(wire
-		(pts
-			(xy 228.6 33.02) (xy 231.14 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6d4eb41d-8123-4415-8e92-86ae18dc20a3")
 	)
 	(wire
 		(pts
@@ -4779,6 +4759,16 @@
 	)
 	(wire
 		(pts
+			(xy 236.22 33.02) (xy 248.92 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9139d66f-fc3b-4436-9d0e-66cb70b3587a")
+	)
+	(wire
+		(pts
 			(xy 208.28 152.4) (xy 217.17 152.4)
 		)
 		(stroke
@@ -5029,6 +5019,16 @@
 	)
 	(wire
 		(pts
+			(xy 236.22 21.59) (xy 236.22 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1935cc5-d494-49c6-a008-ecb63c05b11b")
+	)
+	(wire
+		(pts
 			(xy 125.73 72.39) (xy 125.73 73.66)
 		)
 		(stroke
@@ -5159,7 +5159,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 151.13) (xy 173.99 151.13)
+			(xy 163.83 110.49) (xy 173.99 110.49)
 		)
 		(stroke
 			(width 0)
@@ -5339,7 +5339,7 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 33.02) (xy 228.6 33.02)
+			(xy 229.87 33.02) (xy 236.22 33.02)
 		)
 		(stroke
 			(width 0)
@@ -5359,7 +5359,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 146.05) (xy 173.99 146.05)
+			(xy 163.83 95.25) (xy 173.99 95.25)
 		)
 		(stroke
 			(width 0)
@@ -5509,18 +5509,6 @@
 		)
 		(uuid 3b2bc6f2-4c5d-4f26-80f7-c514ec011974)
 	)
-	(rectangle
-		(start 138.43 15.24)
-		(end 269.24 44.45)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 9fbe6a7e-65d9-4365-87a0-90e311400192)
-	)
 	(text "BOOTSEL button forces entry to bootloader\nby breaking SPI flash communication at boot"
 		(exclude_from_sim no)
 		(at 166.116 20.32 0)
@@ -5563,7 +5551,7 @@
 	)
 	(text "Reset mechanism via button"
 		(exclude_from_sim no)
-		(at 248.666 20.32 0)
+		(at 253.238 21.082 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5583,18 +5571,8 @@
 		)
 		(uuid "d5626fdc-c42d-46d9-8f66-0957266a3609")
 	)
-	(text "TODO: Maybe change from \nbuttons to pins?"
-		(exclude_from_sim no)
-		(at 206.248 27.94 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "f5f527df-aa78-414c-9a96-624c5a5537fa")
-	)
 	(label "B2_LIGHT"
-		(at 165.1 146.05 0)
+		(at 165.1 95.25 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5946,7 +5924,7 @@
 		(uuid "e26001a0-ac49-41a5-b7f4-acdbdf1038c7")
 	)
 	(label "B3_LIGHT"
-		(at 165.1 151.13 0)
+		(at 165.1 110.49 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6001,7 +5979,7 @@
 		(uuid "eef5fe13-86e5-4877-9088-9ab5db637118")
 	)
 	(label "RUN"
-		(at 222.25 33.02 0)
+		(at 229.87 33.02 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6655,7 +6633,7 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 228.6 24.13 0)
+		(at 236.22 21.59 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6664,7 +6642,7 @@
 		(fields_autoplaced yes)
 		(uuid "2456fb32-b2fd-43ee-984a-ee48baeac01f")
 		(property "Reference" "#PWR042"
-			(at 228.6 27.94 0)
+			(at 236.22 25.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6673,7 +6651,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 228.6 19.05 0)
+			(at 236.22 16.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6681,7 +6659,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 228.6 24.13 0)
+			(at 236.22 21.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6690,7 +6668,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 228.6 24.13 0)
+			(at 236.22 21.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6699,7 +6677,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 228.6 24.13 0)
+			(at 236.22 21.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8761,7 +8739,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 234.95 33.02 90)
+		(at 236.22 27.94 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8770,23 +8748,25 @@
 		(fields_autoplaced yes)
 		(uuid "ae9dad1c-97b0-4d97-b2f9-3699d4d528eb")
 		(property "Reference" "R35"
-			(at 234.95 26.67 90)
+			(at 238.76 26.6699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Value" "10k"
-			(at 234.95 29.21 90)
+			(at 238.76 29.2099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 234.95 34.798 90)
+			(at 237.998 27.94 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8795,7 +8775,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 234.95 33.02 0)
+			(at 236.22 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8804,7 +8784,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 234.95 33.02 0)
+			(at 236.22 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
