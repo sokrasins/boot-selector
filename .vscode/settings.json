@@ -7,6 +7,10 @@
         "console.h": "c",
         "usbd.h": "c",
         "reboot.h": "c",
-        "pico.h": "c"
+        "pico.h": "c",
+        "i2c.h": "c",
+        "at42qt1070.h": "c",
+        "at42qt1070_regs.h": "c",
+        "status.h": "c"
     }
 }

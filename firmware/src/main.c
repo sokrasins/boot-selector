@@ -33,6 +33,10 @@
 #include "console.h"
 #include "boot_switch.h"
 #include "reboot.h"
+#include "cap_sense.h"
+
+// Callbacks
+void cap_sense_cb(cap_sense_key_t key, cap_sense_evt_t evt, void *data);
 
 /*------------- MAIN -------------*/
 int main(void)
@@ -46,13 +50,22 @@ int main(void)
 
     // Init device stack on configured roothub port
     tud_init(BOARD_TUD_RHPORT);
+    
+    cap_sense_init();
+    cap_sense_reg_cb(cap_sense_cb);
 
     while (1)
     {
         tud_task(); // tinyusb device task
         console_cdc_task(); // Consume console activity
         boot_switch_task(); // Check for state change of switch
+        cap_sense_task(); // Check for changes in cap sense
     }
 
     return 0;
+}
+
+void cap_sense_cb(cap_sense_key_t key, cap_sense_evt_t evt, void *data)
+{
+    // print("key: %d, evt: %d\r\n", key, evt);
 }

@@ -55,6 +55,8 @@ typedef enum {
     AT42QT_SUPP_GROUP_3 = 3,
 } at42qt_supp_group_t;
 
+status_t at42qt_init(void);
+
 status_t at42qt_get_chipid(uint8_t *major, uint8_t *minor);
 status_t at42qt_get_fwversion(uint8_t *version);
 status_t at42qt_get_status(at42qt_status_t *det_status);

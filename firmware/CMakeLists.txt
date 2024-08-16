@@ -28,18 +28,23 @@ add_executable(${PROJECT})
 
 target_sources(${PROJECT} PUBLIC
         ${CMAKE_CURRENT_LIST_DIR}/src/main.c
-        ${CMAKE_CURRENT_LIST_DIR}/src/usb_descriptors.c
-        ${CMAKE_CURRENT_LIST_DIR}/src/msc_disk.c
         ${CMAKE_CURRENT_LIST_DIR}/src/reboot.c
-        ${CMAKE_CURRENT_LIST_DIR}/src/tud_dev_cb.c
         ${CMAKE_CURRENT_LIST_DIR}/src/console.c
         ${CMAKE_CURRENT_LIST_DIR}/src/boot_switch.c
-        ${CMAKE_CURRENT_LIST_DIR}/src/at42qt1070.c
+        ${CMAKE_CURRENT_LIST_DIR}/src/bsp/bsp_i2c.c
+        ${CMAKE_CURRENT_LIST_DIR}/src/usb/tud_dev_cb.c
+        ${CMAKE_CURRENT_LIST_DIR}/src/usb/usb_descriptors.c
+        ${CMAKE_CURRENT_LIST_DIR}/src/usb/msc_disk.c
+        ${CMAKE_CURRENT_LIST_DIR}/src/cap_sense/at42qt1070.c
+        ${CMAKE_CURRENT_LIST_DIR}/src/cap_sense/cap_sense.c
         )
 
 target_include_directories(${PROJECT} PUBLIC
         ${PICO_SDK_PATH}/lib/tinyusb/src
         ${CMAKE_CURRENT_LIST_DIR}/src
+        ${CMAKE_CURRENT_LIST_DIR}/src/bsp
+        ${CMAKE_CURRENT_LIST_DIR}/src/cap_sense
+        ${CMAKE_CURRENT_LIST_DIR}/src/usb
         )
 
 # In addition to pico_stdlib required for common PicoSDK functionality, add dependency on tinyusb_device
@@ -51,6 +56,7 @@ target_link_libraries(${PROJECT} PUBLIC
         tinyusb_board
         pico_bootrom
         pico_multicore
+        hardware_i2c
         )
 
 # Uncomment this line to enable fix for Errata RP2040-E5 (the fix requires use of GPIO 15)
