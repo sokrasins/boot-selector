@@ -60,6 +60,8 @@ int main(void)
         console_cdc_task(); // Consume console activity
         boot_switch_task(); // Check for state change of switch
         cap_sense_task(); // Check for changes in cap sense
+
+        sleep_ms(1);
     }
 
     return 0;

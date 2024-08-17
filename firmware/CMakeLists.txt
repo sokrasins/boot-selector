@@ -50,12 +50,13 @@ target_include_directories(${PROJECT} PUBLIC
 # In addition to pico_stdlib required for common PicoSDK functionality, add dependency on tinyusb_device
 # for TinyUSB device support and tinyusb_board for the additional board support library used by the example
 target_link_libraries(${PROJECT} PUBLIC 
-        pico_stdlib 
-        pico_unique_id 
-        tinyusb_device 
-        tinyusb_board
+        pico_stdlib
+        pico_unique_id
         pico_bootrom
         pico_multicore
+        tinyusb_device
+        tinyusb_board
+        hardware_gpio
         hardware_i2c
         )
 

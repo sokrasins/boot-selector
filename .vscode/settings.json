@@ -11,6 +11,7 @@
         "i2c.h": "c",
         "at42qt1070.h": "c",
         "at42qt1070_regs.h": "c",
-        "status.h": "c"
+        "status.h": "c",
+        "gpio.h": "c"
     }
 }
