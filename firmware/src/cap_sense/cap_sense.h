@@ -2,6 +2,7 @@
 #define CAP_SENSE_H_
 
 #include "status.h"
+#include <stdint.h>
 
 typedef enum {
     CAP_SENSE_KEY_1 = 0,
@@ -22,5 +23,11 @@ status_t cap_sense_init(void);
 void cap_sense_task(void);
 
 status_t cap_sense_reg_cb(cap_sense_cb_t cb);
+
+uint8_t cap_get_major(void);
+
+uint8_t cap_get_minor(void);
+
+uint8_t cap_get_version(void);
 
 #endif /*CAP_SENSE_H_*/

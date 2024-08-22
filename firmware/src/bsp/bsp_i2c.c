@@ -7,14 +7,14 @@
 uint8_t _addr;
 
 #define PICO_I2C_INSTANCE   i2c0
-#define PICO_I2C_SDA_PIN    6
-#define PICO_I2C_SCL_PIN    7
+#define PICO_I2C_SDA_PIN    4
+#define PICO_I2C_SCL_PIN    5
 
 status_t bsp_i2c_init(uint8_t addr) 
 {
     status_t status = STATUS_OK;
     _addr = addr;
-    int err = i2c_init(PICO_I2C_INSTANCE, 400 * 1000);
+    int err = i2c_init(PICO_I2C_INSTANCE, 40 * 1000);
     if (err != 0)
     {
         status = STATUS_ERR;
@@ -22,6 +22,8 @@ status_t bsp_i2c_init(uint8_t addr)
 
     gpio_set_function(PICO_I2C_SDA_PIN, GPIO_FUNC_I2C);
     gpio_set_function(PICO_I2C_SCL_PIN, GPIO_FUNC_I2C);
+    gpio_set_slew_rate(PICO_I2C_SDA_PIN, GPIO_SLEW_RATE_FAST);
+    gpio_set_slew_rate(PICO_I2C_SDA_PIN, GPIO_SLEW_RATE_FAST);
 
     return status;
 }
@@ -37,7 +39,6 @@ status_t bsp_i2c_read(uint8_t reg, uint8_t *val)
     {
         status = STATUS_ERR;
     }
-
     return status;
 }
 

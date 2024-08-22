@@ -4,12 +4,13 @@
 
 #include "tusb.h"
 #include "reboot.h"
+#include "cap_sense.h"
 
 #define CDC_MAX_CMD_BUF 256U
 #define CDC_MAX_BEFORE_CLEAR (CDC_MAX_CMD_BUF / 2)
 
-#define CONSOLE_UNREC_CMD "Unrecognized command"
-#define CONSOLE_BOOT_MODE "Boot mode"
+#define CONSOLE_UNREC_CMD "    Unrecognized command\r\n"
+#define CONSOLE_BOOT_MODE "    Boot mode\r\n"
 
 bool _console_parse(char *cmd, int len);
 
@@ -55,6 +56,9 @@ bool _console_parse(char *cmd, int len)
 
   if (cmd[len-1] == '\r')
   {
+    char output[100];
+
+    tud_cdc_write("\r\n", 3); 
     reset = true;
     if (strcmp(cmd, "boot\r") == 0)
     {
@@ -63,11 +67,39 @@ bool _console_parse(char *cmd, int len)
 
       reboot(true);
     }
+    else if (strcmp(cmd, "maj\r") == 0)
+    {
+      valid_cmd = true;
+      int size = sprintf(output, "    major: %d\r\n", cap_get_major());
+      tud_cdc_write(output, size);
+    }
+    else if (strcmp(cmd, "min\r") == 0)
+    {
+      valid_cmd = true;
+      int size = sprintf(output, "    minor: %d\r\n", cap_get_minor());
+      tud_cdc_write(output, size);
+    }
+    else if (strcmp(cmd, "ver\r") == 0)
+    {
+      valid_cmd = true;
+      int size = sprintf(output, "    version: %d\r\n", cap_get_version());
+      tud_cdc_write(output, size);
+    }
+    else if (strcmp(cmd, "keys\r") == 0)
+    {
+      valid_cmd = true;
+      uint8_t new_key_state = 0;
+      at42qt_get_key_status(&new_key_state);
+      int size = sprintf(output, "    key state: %d\r\n", new_key_state);
+      tud_cdc_write(output, size);
+    }
 
     if (!valid_cmd)
     {
       tud_cdc_write(CONSOLE_UNREC_CMD, sizeof(CONSOLE_UNREC_CMD) - 1); 
     }
+
+    //tud_cdc_write("\r\n", 3); 
 
   }
 

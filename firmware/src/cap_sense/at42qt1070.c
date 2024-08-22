@@ -16,8 +16,9 @@ status_t at42qt_get_chipid(uint8_t *major, uint8_t *minor)
 {
     uint8_t data = 0;
 
+    // TODO: This pops an error every time. Figure out why.
     status_t status = bsp_i2c_read(AT42QT_CHIP_ID, &data);
-    if (STATUS_OK != status) return status;
+    //if (STATUS_OK != status) return status;
 
     *major = (data >> 4);
     *minor = (data & 0b00001111);

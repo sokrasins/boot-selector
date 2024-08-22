@@ -35,6 +35,11 @@
 #include "reboot.h"
 #include "cap_sense.h"
 
+#include "hardware/gpio.h"
+
+// Pin I have the LED driver connected to
+#define DEMO_KEY_PIN 15U
+
 // Callbacks
 void cap_sense_cb(cap_sense_key_t key, cap_sense_evt_t evt, void *data);
 
@@ -46,11 +51,17 @@ int main(void)
 
     // Set the file to serve based on switch state
     msc_set_file(boot_switch_get());
-    board_led_write(boot_switch_get());
+    //board_led_write(boot_switch_get());
 
     // Init device stack on configured roothub port
     tud_init(BOARD_TUD_RHPORT);
+
+    // Hack in a pin for our switch indicator
+    gpio_init(DEMO_KEY_PIN);
+    gpio_set_dir(DEMO_KEY_PIN, GPIO_OUT);
     
+    sleep_ms(1000);
+
     cap_sense_init();
     cap_sense_reg_cb(cap_sense_cb);
 
@@ -61,7 +72,7 @@ int main(void)
         boot_switch_task(); // Check for state change of switch
         cap_sense_task(); // Check for changes in cap sense
 
-        sleep_ms(1);
+        sleep_ms(10);
     }
 
     return 0;
@@ -69,5 +80,10 @@ int main(void)
 
 void cap_sense_cb(cap_sense_key_t key, cap_sense_evt_t evt, void *data)
 {
-    // print("key: %d, evt: %d\r\n", key, evt);
+    // TODO printf("key: %d, evt: %d\r\n", key, evt);
+    if (key == CAP_SENSE_KEY_2)
+    {
+        board_led_write((bool) evt);
+        gpio_put(DEMO_KEY_PIN, (bool) evt);
+    }
 }

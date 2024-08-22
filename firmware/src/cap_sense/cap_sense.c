@@ -6,9 +6,18 @@
 static cap_sense_cb_t _cb = NULL;
 static  uint8_t old_key_state;
 
+uint8_t major = 0;
+uint8_t minor = 0;
+uint8_t version = 0;
+
 status_t cap_sense_init(void)
 {
-    return at42qt_init();
+    status_t status = at42qt_init();
+
+    at42qt_get_chipid(&major, &minor);
+    at42qt_get_fwversion(&version);
+
+    return status;
 
     // TODO: Set up cap sense sensitivity and stuff
 }
@@ -46,4 +55,20 @@ status_t cap_sense_reg_cb(cap_sense_cb_t cb)
     }
 
     return status;
+}
+
+uint8_t cap_get_major(void)
+{
+    return major;
+}
+
+
+uint8_t cap_get_minor(void)
+{
+    return minor;
+}
+
+uint8_t cap_get_version(void)
+{
+    return version;
 }
