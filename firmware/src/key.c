@@ -37,6 +37,7 @@ void key_cap_cb(cap_sense_key_t key, cap_sense_evt_t evt, void *data)
                 _keys[i]->state = key_state_toggle(_keys[i]->state);
                 gpio_put(_keys[i]->led_pin, (bool) _keys[i]->state);
             }
+            bsp_led_write((bool) evt);
         }
     }
 }
@@ -45,4 +46,3 @@ key_state_t key_state_toggle(key_state_t in)
 {
     return (in == KEY_STATE_ON ? KEY_STATE_OFF : KEY_STATE_ON);
 }
-

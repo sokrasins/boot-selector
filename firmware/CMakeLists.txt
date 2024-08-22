@@ -33,6 +33,7 @@ target_sources(${PROJECT} PUBLIC
         ${CMAKE_CURRENT_LIST_DIR}/src/boot_switch.c
         ${CMAKE_CURRENT_LIST_DIR}/src/key.c
         ${CMAKE_CURRENT_LIST_DIR}/src/bsp/bsp_i2c.c
+        ${CMAKE_CURRENT_LIST_DIR}/src/bsp/bsp_pindef.c
         ${CMAKE_CURRENT_LIST_DIR}/src/usb/tud_dev_cb.c
         ${CMAKE_CURRENT_LIST_DIR}/src/usb/usb_descriptors.c
         ${CMAKE_CURRENT_LIST_DIR}/src/usb/msc_disk.c

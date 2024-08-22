@@ -99,9 +99,6 @@ bool _console_parse(char *cmd, int len)
     {
       tud_cdc_write(CONSOLE_UNREC_CMD, sizeof(CONSOLE_UNREC_CMD) - 1); 
     }
-
-    //tud_cdc_write("\r\n", 3); 
-
   }
 
   return reset;

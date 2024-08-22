@@ -28,7 +28,6 @@
 #include <string.h>
 
 #include "bsp/board.h"
-
 #include "msc_disk.h"
 #include "console.h"
 #include "boot_switch.h"
@@ -48,7 +47,6 @@ int main(void)
 
     // Set the file to serve based on switch state
     msc_set_file(boot_switch_get());
-    //board_led_write(boot_switch_get());
 
     // Init device stack on configured roothub port
     tud_init(BOARD_TUD_RHPORT);
