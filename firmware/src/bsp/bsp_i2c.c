@@ -3,12 +3,13 @@
 #include "hardware/i2c.h"
 #include "hardware/gpio.h"
 #include "status.h"
+#include "bsp_pindef.h"
 
 uint8_t _addr;
 
 #define PICO_I2C_INSTANCE   i2c0
-#define PICO_I2C_SDA_PIN    4
-#define PICO_I2C_SCL_PIN    5
+#define PICO_I2C_SDA_PIN    BSP_PINDEF_SDA
+#define PICO_I2C_SCL_PIN    BSP_PINDEF_SCL
 
 status_t bsp_i2c_init(uint8_t addr) 
 {

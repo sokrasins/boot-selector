@@ -5,6 +5,7 @@
 #include "tusb.h"
 #include "reboot.h"
 #include "cap_sense.h"
+#include "at42qt1070.h"
 
 #define CDC_MAX_CMD_BUF 256U
 #define CDC_MAX_BEFORE_CLEAR (CDC_MAX_CMD_BUF / 2)

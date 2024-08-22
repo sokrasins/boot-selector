@@ -34,14 +34,11 @@
 #include "boot_switch.h"
 #include "reboot.h"
 #include "cap_sense.h"
+#include "key.h"
+#include "bsp.h"
 
-#include "hardware/gpio.h"
-
-// Pin I have the LED driver connected to
-#define DEMO_KEY_PIN 15U
-
-// Callbacks
-void cap_sense_cb(cap_sense_key_t key, cap_sense_evt_t evt, void *data);
+// Key contexts
+key_ctx_t key_1;
 
 /*------------- MAIN -------------*/
 int main(void)
@@ -57,13 +54,12 @@ int main(void)
     tud_init(BOARD_TUD_RHPORT);
 
     // Hack in a pin for our switch indicator
-    gpio_init(DEMO_KEY_PIN);
-    gpio_set_dir(DEMO_KEY_PIN, GPIO_OUT);
+    key_init(&key_1, BSP_PINDEF_KEY1, CAP_SENSE_KEY_2);
     
     sleep_ms(1000);
 
     cap_sense_init();
-    cap_sense_reg_cb(cap_sense_cb);
+    cap_sense_reg_cb(key_cap_cb);
 
     while (1)
     {
@@ -76,14 +72,4 @@ int main(void)
     }
 
     return 0;
-}
-
-void cap_sense_cb(cap_sense_key_t key, cap_sense_evt_t evt, void *data)
-{
-    // TODO printf("key: %d, evt: %d\r\n", key, evt);
-    if (key == CAP_SENSE_KEY_2)
-    {
-        board_led_write((bool) evt);
-        gpio_put(DEMO_KEY_PIN, (bool) evt);
-    }
 }
