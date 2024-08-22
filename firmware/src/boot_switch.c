@@ -15,15 +15,13 @@ static uint32_t start_ms = 0;
 void boot_switch_init(void)
 {
     // Config input switch
-    gpio_init(BOOT_SWITCH_PIN);
-    gpio_set_dir(BOOT_SWITCH_PIN, GPIO_IN);
-    gpio_set_pulls(BOOT_SWITCH_PIN, true, false);
+    //gpio_init(BOOT_SWITCH_PIN);
+    //gpio_set_dir(BOOT_SWITCH_PIN, GPIO_IN);
+    //gpio_set_pulls(BOOT_SWITCH_PIN, true, false);
 
     // Get the state of the switch after pin is set up
-    first_switch_state = gpio_get(BOOT_SWITCH_PIN);
+    //first_switch_state = gpio_get(BOOT_SWITCH_PIN);
 }
-
-
 
 void boot_switch_task(void)
 { 

@@ -32,6 +32,7 @@ target_sources(${PROJECT} PUBLIC
         ${CMAKE_CURRENT_LIST_DIR}/src/console.c
         ${CMAKE_CURRENT_LIST_DIR}/src/boot_switch.c
         ${CMAKE_CURRENT_LIST_DIR}/src/key.c
+        ${CMAKE_CURRENT_LIST_DIR}/src/settings.c
         ${CMAKE_CURRENT_LIST_DIR}/src/bsp/bsp_i2c.c
         ${CMAKE_CURRENT_LIST_DIR}/src/bsp/bsp_pindef.c
         ${CMAKE_CURRENT_LIST_DIR}/src/usb/tud_dev_cb.c
@@ -60,6 +61,8 @@ target_link_libraries(${PROJECT} PUBLIC
         tinyusb_board
         hardware_gpio
         hardware_i2c
+        hardware_flash
+        hardware_sync
         )
 
 # Uncomment this line to enable fix for Errata RP2040-E5 (the fix requires use of GPIO 15)

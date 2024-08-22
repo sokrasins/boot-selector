@@ -6,6 +6,7 @@
 #include "reboot.h"
 #include "cap_sense.h"
 #include "at42qt1070.h"
+#include "settings.h"
 
 #define CDC_MAX_CMD_BUF 256U
 #define CDC_MAX_BEFORE_CLEAR (CDC_MAX_CMD_BUF / 2)
@@ -65,8 +66,13 @@ bool _console_parse(char *cmd, int len)
     {
       valid_cmd = true;
       tud_cdc_write(CONSOLE_BOOT_MODE, sizeof(CONSOLE_BOOT_MODE) - 1); 
-
       reboot(true);
+    }
+    else if (strcmp(cmd, "reset\r") == 0)
+    {
+      valid_cmd = true;
+      tud_cdc_write(CONSOLE_BOOT_MODE, sizeof(CONSOLE_BOOT_MODE) - 1); 
+      reboot(false);
     }
     else if (strcmp(cmd, "maj\r") == 0)
     {
@@ -92,6 +98,20 @@ bool _console_parse(char *cmd, int len)
       uint8_t new_key_state = 0;
       at42qt_get_key_status(&new_key_state);
       int size = sprintf(output, "    key state: %d\r\n", new_key_state);
+      tud_cdc_write(output, size);
+    }
+    else if(strcmp(cmd, "writewin\r") == 0)
+    {
+      valid_cmd = true;
+      settings_write_os(SETTINGS_OS_WINDOWS);
+      int size = sprintf(output, "    Done\r\n");
+      tud_cdc_write(output, size);
+    }
+    else if (strcmp(cmd, "writelin\r") == 0)
+    {
+      valid_cmd = true;
+      settings_write_os(SETTINGS_OS_LINUX);
+      int size = sprintf(output, "    Done\r\n");
       tud_cdc_write(output, size);
     }
 

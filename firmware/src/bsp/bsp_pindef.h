@@ -4,6 +4,8 @@
 #include <stdbool.h>
 
 #define BSP_PINDEF_KEY1 15U
+#define BSP_PINDEF_KEY2 14U
+
 #define BSP_PINDEF_SDA  4U
 #define BSP_PINDEF_SCL  5U
 

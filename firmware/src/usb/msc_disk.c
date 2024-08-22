@@ -280,11 +280,11 @@ void msc_set_file(bool file_choice)
 
   if (file_choice)
   {
-    file_contents = LINUX_CONTENTS;
+    file_contents = WINDOWS_CONTENTS;
   }
   else
   {
-    file_contents = WINDOWS_CONTENTS;
+    file_contents = LINUX_CONTENTS;
   }
 
   msc_disk[2][60] = strlen(file_contents);

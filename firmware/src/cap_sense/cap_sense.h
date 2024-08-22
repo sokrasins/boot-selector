@@ -8,6 +8,7 @@ typedef enum {
     CAP_SENSE_KEY_1 = 0,
     CAP_SENSE_KEY_2,
     CAP_SENSE_KEY_3,
+    CAP_SENSE_KEY_4,
     CAP_SENSE_KEY_MAX,
     CAP_SENSE_KEY_INVALID,
 } cap_sense_key_t;
