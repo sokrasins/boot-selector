@@ -1,6 +1,7 @@
 #include "key.h"
 
 #include "hardware/gpio.h"
+#include "bsp.h"
 #include <stdbool.h>
 
 #define KEY_MAX 8U
@@ -10,11 +11,12 @@ int num_keys = 0;
 
 key_state_t key_state_toggle(key_state_t in);
 
-void key_init(key_ctx_t *key, unsigned int led_pin, cap_sense_key_t cap_key)
+void key_init(key_ctx_t *key, unsigned int led_pin, cap_sense_key_t cap_key, key_action_t key_action)
 {
     key->cap_key = cap_key;
     key->led_pin = led_pin;
     key->state = KEY_STATE_OFF;
+    key->action = key_action;
 
     gpio_init(led_pin);
     gpio_set_dir(led_pin, GPIO_OUT);
@@ -32,11 +34,7 @@ void key_cap_cb(cap_sense_key_t key, cap_sense_evt_t evt, void *data)
     {
         if (_keys[i]->cap_key == key)
         {
-            if (evt == CAP_SENSE_EVT_KEY_ON)
-            {
-                _keys[i]->state = key_state_toggle(_keys[i]->state);
-                gpio_put(_keys[i]->led_pin, (bool) _keys[i]->state);
-            }
+            _keys[i]->action(_keys[i], evt);
             bsp_led_write((bool) evt);
         }
     }

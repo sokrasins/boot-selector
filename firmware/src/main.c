@@ -33,15 +33,10 @@
 #include "boot_switch.h"
 #include "reboot.h"
 #include "cap_sense.h"
-#include "key.h"
+#include "keys.h"
 #include "bsp.h"
 #include "settings.h"
 
-// Key contexts
-key_ctx_t key_1;
-key_ctx_t key_2;
-
-key_state_t prev_state = KEY_STATE_ON;
 
 /*------------- MAIN -------------*/
 int main(void)
@@ -49,16 +44,16 @@ int main(void)
     board_init();
     boot_switch_init();
 
-    // Set the file to serve based on switch state
+    // Set the file to serve at boot
     settings_os_t choice = settings_read_os();
     msc_set_file(choice);
 
     // Init device stack on configured roothub port
     tud_init(BOARD_TUD_RHPORT);
 
-    // Hack in a pin for our switch indicator
-    key_init(&key_1, BSP_PINDEF_KEY1, CAP_SENSE_KEY_2);
-    key_init(&key_2, BSP_PINDEF_KEY2, CAP_SENSE_KEY_3);
+    // Set up the keys
+    key_1_init();
+    key_2_init();
     
     sleep_ms(1000);
 
@@ -69,23 +64,7 @@ int main(void)
     {
         tud_task(); // tinyusb device task
         console_cdc_task(); // Consume console activity
-        //boot_switch_task(); // Check for state change of switch
         cap_sense_task(); // Check for changes in cap sense
-
-        // TODO: The keys should be able to handle this kind of thing themselves
-        if (prev_state == KEY_STATE_OFF && key_2.state == KEY_STATE_ON)
-        {
-            tud_disconnect();
-            //settings_write_os((settings_os_t) key_1.state);
-            msc_set_file((settings_os_t) key_1.state);
-            sleep_ms(1000);
-            tud_connect();
-            // Init device stack on configured roothub port
-            //tud_init(BOARD_TUD_RHPORT);
-            //reboot(false);
-        }
-        prev_state = key_2.state;
-
         sleep_ms(10);
     }
 

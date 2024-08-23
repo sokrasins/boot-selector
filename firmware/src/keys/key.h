@@ -6,19 +6,26 @@
 
 #define GPIO_PIN_INVALID 0xFF
 
+typedef struct key_ctx_e key_ctx_t;
+
+typedef void (*key_action_t)(key_ctx_t *key, cap_sense_evt_t evt);
+
 typedef enum {
     KEY_STATE_OFF,
     KEY_STATE_ON,
 } key_state_t;
 
-typedef struct {
+struct key_ctx_e {
     unsigned int led_pin;
     cap_sense_key_t cap_key;
     key_state_t state;
-} key_ctx_t;
+    key_action_t action;
+};
 
-void key_init(key_ctx_t *key, unsigned int led_pin, cap_sense_key_t cap_key);
+void key_init(key_ctx_t *key, unsigned int led_pin, cap_sense_key_t cap_key, key_action_t key_action);
 
 void key_cap_cb(cap_sense_key_t key, cap_sense_evt_t evt, void *data);
+
+key_state_t key_state_toggle(key_state_t in);
 
 #endif /*KEY_H_*/

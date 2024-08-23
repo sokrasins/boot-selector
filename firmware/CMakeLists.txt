@@ -28,11 +28,10 @@ add_executable(${PROJECT})
 
 target_sources(${PROJECT} PUBLIC
         ${CMAKE_CURRENT_LIST_DIR}/src/main.c
-        ${CMAKE_CURRENT_LIST_DIR}/src/reboot.c
         ${CMAKE_CURRENT_LIST_DIR}/src/console.c
         ${CMAKE_CURRENT_LIST_DIR}/src/boot_switch.c
-        ${CMAKE_CURRENT_LIST_DIR}/src/key.c
         ${CMAKE_CURRENT_LIST_DIR}/src/settings.c
+        ${CMAKE_CURRENT_LIST_DIR}/src/bsp/reboot.c
         ${CMAKE_CURRENT_LIST_DIR}/src/bsp/bsp_i2c.c
         ${CMAKE_CURRENT_LIST_DIR}/src/bsp/bsp_pindef.c
         ${CMAKE_CURRENT_LIST_DIR}/src/usb/tud_dev_cb.c
@@ -40,6 +39,9 @@ target_sources(${PROJECT} PUBLIC
         ${CMAKE_CURRENT_LIST_DIR}/src/usb/msc_disk.c
         ${CMAKE_CURRENT_LIST_DIR}/src/cap_sense/at42qt1070.c
         ${CMAKE_CURRENT_LIST_DIR}/src/cap_sense/cap_sense.c
+        ${CMAKE_CURRENT_LIST_DIR}/src/keys/key.c
+        ${CMAKE_CURRENT_LIST_DIR}/src/keys/key1.c
+        ${CMAKE_CURRENT_LIST_DIR}/src/keys/key2.c
         )
 
 target_include_directories(${PROJECT} PUBLIC
@@ -48,6 +50,7 @@ target_include_directories(${PROJECT} PUBLIC
         ${CMAKE_CURRENT_LIST_DIR}/src/bsp
         ${CMAKE_CURRENT_LIST_DIR}/src/cap_sense
         ${CMAKE_CURRENT_LIST_DIR}/src/usb
+        ${CMAKE_CURRENT_LIST_DIR}/src/keys
         )
 
 # In addition to pico_stdlib required for common PicoSDK functionality, add dependency on tinyusb_device
